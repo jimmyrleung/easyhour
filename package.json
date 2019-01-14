@@ -1,0 +1,31 @@
+{
+  "name": "easyhour",
+  "version": "0.0.1",
+  "description": "An application to manage project hours and track its metrics",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "set NODE_ENV=development&& npm run -s start-dev",
+    "start-dev": "node_modules/.bin/tsc && node dist/main.js",
+    "ts": "node_modules/.bin/tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmyrleung/easyhour.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmyrleung/easyhour/issues"
+  },
+  "homepage": "https://github.com/jimmyrleung/easyhour#readme",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.12.15",
+    "typescript": "3.2.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
