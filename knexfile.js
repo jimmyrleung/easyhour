@@ -18,12 +18,28 @@ module.exports = {
     }
   },
 
-  staging: {
-    client: 'postgresql',
+  test: {
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'EasyHourTest',
+      user:     'root',
+      password: 'root'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  staging: {
+    client: 'mysql',
+    connection: {
+      database: 'EasyHour',
+      user:     'root',
+      password: 'root'
     },
     pool: {
       min: 2,
@@ -35,11 +51,11 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'EasyHour',
+      user:     'root',
+      password: 'root'
     },
     pool: {
       min: 2,

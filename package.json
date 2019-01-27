@@ -7,6 +7,7 @@
     "start": "set NODE_ENV=development&& npm run -s start-dev",
     "start-dev": "node_modules/.bin/tsc && node dist/main.js",
     "ts": "node_modules/.bin/tsc -w",
+    "migration":"knex migrate:latest",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
