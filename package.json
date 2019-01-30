@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "set NODE_ENV=development&& npm run -s start-dev",
-    "start-dev": "node_modules/.bin/tsc && node dist/main.js",
+    "start-dev": "node_modules/.bin/tsc && node dist/main.js && npm run -s migration",
     "ts": "node_modules/.bin/tsc -w",
     "migration":"knex migrate:latest",
     "test": "echo \"Error: no test specified\" && exit 1"

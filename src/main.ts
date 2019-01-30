@@ -1,8 +1,10 @@
 import * as http from 'http';
 import express from './express';
 
+import { SystemConstants, SystemMessages } from './constants/index';
+
 const server = http.createServer(express);
 
-server.listen(3000, () => {
-    console.log("EasyHour running on port 3000...");
+server.listen(SystemConstants.APPLICATION_PORT, () => {
+    console.log(SystemMessages.LAUNCH_MESSAGE);
 });
