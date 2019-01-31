@@ -1,7 +1,7 @@
 import * as http from 'http';
 import express from './express';
 
-import { SystemConstants, SystemMessages } from './constants/index';
+import { SystemConstants, SystemMessages } from './app/constants/index';
 
 const server = http.createServer(express);
 
