@@ -4,9 +4,10 @@
   "description": "An application to manage project hours and track its metrics",
   "main": "dist/app.js",
   "scripts": {
-    "start": "set NODE_ENV=development&& npm run -s start-dev",
-    "start-dev": "node_modules/.bin/tsc && node dist/main.js && npm run -s migration",
-    "ts": "node_modules/.bin/tsc -w",
+    "start": "set NODE_ENV=development&& npm run start-dev",
+    "start-dev": "npm run ts && npm run migration && node dist/main.js",
+    "ts": "node_modules/.bin/tsc",
+    "tsw": "node_modules/.bin/tsc -w",
     "migration": "knex migrate:latest",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
