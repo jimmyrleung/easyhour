@@ -11,8 +11,12 @@ export class BaseDAO<Entity>{
         this._knex = KnexClient(SystemConstants.MYSQL_DATABASE_CONFIG);
     };
 
+    protected knex() {
+        return this._knex(this._tableName);
+    };
+
     async create(entity: Entity) {
-        return this._knex(this._tableName).insert(entity);
+        return this.knex().insert(entity);
     };
 
 };
