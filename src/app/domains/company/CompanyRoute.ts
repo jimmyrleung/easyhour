@@ -1,6 +1,6 @@
 import * as Express from 'express';
 import { CompanyController } from './CompanyController';
-import { SystemRoutes } from '../constants/systemRoutes';
+import { SystemRoutes } from '../../constants/systemRoutes';
 
 export class CompanyRoute {
 

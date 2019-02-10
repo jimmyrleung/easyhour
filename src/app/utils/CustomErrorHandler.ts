@@ -2,6 +2,7 @@ import { CustomError } from "./CustomError";
 
 export class CustomErrorHandler {
     static handle(error, res) {
+        console.log(error);
         if (error instanceof CustomError) {
             res.status(error.code).json({ message: error.message });
         }
