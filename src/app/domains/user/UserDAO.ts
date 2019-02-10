@@ -11,7 +11,7 @@ export class UserDAO {
     static async isUserAlreadyRegistered(u: User): Promise<boolean> {
         const countResult = await this.dbQueryBuilder()
             .where('login', u.login).orWhere('email', u.email).count();
-        console.log(countResult);
+
         return countResult[0]["count(*)"] > 0;
     }
 

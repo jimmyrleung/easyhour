@@ -14,7 +14,7 @@ export class CompanyDAO {
                 this.where('companyName', c.companyName).orWhere('registerNumber', c.registerNumber)
             })
             .andWhere({ active: true }).count();
-        console.log(countResult);
+
         return countResult[0]["count(*)"] > 0;
     }
 
