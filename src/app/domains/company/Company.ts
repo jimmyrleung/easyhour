@@ -1,5 +1,5 @@
 import { IModelError } from '../../utils/index';
-import { CompanyConstants } from '@constants';
+import { CompanyConstants } from '../../constants/CompanyConstants';
 
 export class Company {
     id: number;
