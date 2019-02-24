@@ -1,4 +1,5 @@
 import { CustomError } from "./CustomError";
+import { IModelError } from "./IModelError";
 
 export class CustomErrorHandler {
     static handle(error, res) {
@@ -9,5 +10,10 @@ export class CustomErrorHandler {
         else {
             res.status(500).json({ message: "Internal server error." });
         }
-    }
+    };
+
+    static handleModelError(errors: IModelError[], res) {
+        const messages = errors.map((e) => e.message);
+        res.status(400).json({ messages });
+    };
 }
