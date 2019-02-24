@@ -1,11 +1,11 @@
 import * as Express from 'express';
 import { CompanyController } from './CompanyController';
-import { SystemRoutes } from '../../constants/systemRoutes';
+import { RouteConstants } from '@constants';
 
 export class CompanyRoute {
 
     static RegisterCompanyRoutes(app: Express.Application) {
-        app.route(SystemRoutes.BASE_COMPANIES_URL)
+        app.route(RouteConstants.BASE_COMPANIES_URL)
             .post(CompanyController.create);
     }
 
