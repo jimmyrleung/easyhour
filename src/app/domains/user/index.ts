@@ -1,2 +1,2 @@
-export * from './UserDAO';
+export * from './userDAO';
 export * from './User';

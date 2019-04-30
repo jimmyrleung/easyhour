@@ -1,5 +1,5 @@
 import * as KnexClient from 'knex';
-import { SystemConstants } from '../constants/index';
+import { config } from '../config';
 
 export class BaseKnex {
 
@@ -9,7 +9,7 @@ export class BaseKnex {
     }
 
     static getConnection(): KnexClient {
-        return KnexClient(SystemConstants.MYSQL_DATABASE_CONFIG);
+        return KnexClient(config.MYSQL_DATABASE_CONFIG);
     }
 
     static getTransaction(): Promise<KnexClient.Transaction> {

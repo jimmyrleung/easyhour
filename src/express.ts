@@ -1,8 +1,11 @@
 import * as Express from 'express';
-import { CompanyRoute } from './app/domains/company/index';
+import { companyRoute } from './app/domains/company';
 import * as bodyParser from 'body-parser';
+import * as helmet from 'helmet';
+
 const express = Express();
 
+express.use(helmet());
 express.use(bodyParser.json());
 
 express.use(function (req, res, next) {
@@ -11,6 +14,6 @@ express.use(function (req, res, next) {
     next();
 });
 
-CompanyRoute.RegisterCompanyRoutes(express);
+companyRoute.registerCompanyRoutes(express);
 
 export default express;

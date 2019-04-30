@@ -1,14 +1,12 @@
 import * as Express from 'express';
-import { CompanyController } from './CompanyController';
+import { companyController } from './companyController';
 
 //https://github.com/Microsoft/TypeScript/issues/10866
-import { RouteConstants } from '../../constants';
+import { routeConstants } from '../../constants';
 
-export class CompanyRoute {
+const registerCompanyRoutes = (app: Express.Application) => {
+    app.route(routeConstants.BASE_COMPANIES_URL)
+        .post(companyController.create);
+};
 
-    static RegisterCompanyRoutes(app: Express.Application) {
-        app.route(RouteConstants.BASE_COMPANIES_URL)
-            .post(CompanyController.create);
-    }
-
-}
+export const companyRoute = { registerCompanyRoutes };

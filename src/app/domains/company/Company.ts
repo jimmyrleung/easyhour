@@ -1,5 +1,5 @@
 import { IModelError, ModelErrorTypes } from '../../utils/index';
-import { CompanyConstants } from '../../constants/CompanyConstants';
+import { companyConstants } from '../../constants/companyConstants';
 import { StringValidator } from '../../utils/validators/index';
 import { BaseModel } from '../../base/index';
 
@@ -28,7 +28,7 @@ export class Company extends BaseModel {
             this._errors.push({
                 type: ModelErrorTypes.Required,
                 field: "companyName",
-                message: CompanyConstants.messages.COMPANY_NAME_REQUIRED_MESSAGE
+                message: companyConstants.messages.COMPANY_NAME_REQUIRED_MESSAGE
             });
         }
 
@@ -36,7 +36,7 @@ export class Company extends BaseModel {
             this._errors.push({
                 type: ModelErrorTypes.Required,
                 field: "tradingName",
-                message: CompanyConstants.messages.TRADING_NAME_REQUIRED_MESSAGE
+                message: companyConstants.messages.TRADING_NAME_REQUIRED_MESSAGE
             });
         }
 
@@ -44,7 +44,7 @@ export class Company extends BaseModel {
             this._errors.push({
                 type: ModelErrorTypes.Required,
                 field: "registerNumber",
-                message: CompanyConstants.messages.REGISTER_NUMBER_REQUIRED_MESSAGE
+                message: companyConstants.messages.REGISTER_NUMBER_REQUIRED_MESSAGE
             });
         }
     };
@@ -61,12 +61,12 @@ export class Company extends BaseModel {
         this.baseStringValidation({
             field: "companyName",
             overrideOptions: {
-                maxLength: CompanyConstants.config.COMPANY_NAME_MAX_LENGTH,
-                minLength: CompanyConstants.config.COMPANY_NAME_MIN_LENGTH,
+                maxLength: companyConstants.config.COMPANY_NAME_MAX_LENGTH,
+                minLength: companyConstants.config.COMPANY_NAME_MIN_LENGTH,
                 stringToValidate: this.companyName
             },
-            lengthMessage: CompanyConstants.messages.COMPANY_NAME_LENGTH_MESSAGE,
-            typeOfMessage: CompanyConstants.messages.COMPANY_NAME_TYPEOF_MESSAGE
+            lengthMessage: companyConstants.messages.COMPANY_NAME_LENGTH_MESSAGE,
+            typeOfMessage: companyConstants.messages.COMPANY_NAME_TYPEOF_MESSAGE
         });
     };
 
@@ -74,12 +74,12 @@ export class Company extends BaseModel {
         this.baseStringValidation({
             field: "tradingName",
             overrideOptions: {
-                maxLength: CompanyConstants.config.TRADING_NAME_MAX_LENGTH,
-                minLength: CompanyConstants.config.TRADING_NAME_MIN_LENGTH,
+                maxLength: companyConstants.config.TRADING_NAME_MAX_LENGTH,
+                minLength: companyConstants.config.TRADING_NAME_MIN_LENGTH,
                 stringToValidate: this.tradingName
             },
-            lengthMessage: CompanyConstants.messages.TRADING_NAME_LENGTH_MESSAGE,
-            typeOfMessage: CompanyConstants.messages.TRADING_NAME_TYPEOF_MESSAGE
+            lengthMessage: companyConstants.messages.TRADING_NAME_LENGTH_MESSAGE,
+            typeOfMessage: companyConstants.messages.TRADING_NAME_TYPEOF_MESSAGE
         });
     };
 
@@ -88,12 +88,12 @@ export class Company extends BaseModel {
         this.baseStringValidation({
             field: "registerNumber",
             overrideOptions: {
-                maxLength: CompanyConstants.config.REGISTER_NUMBER_MAX_LENGTH,
-                minLength: CompanyConstants.config.REGISTER_NUMBER_MIN_LENGTH,
+                maxLength: companyConstants.config.REGISTER_NUMBER_MAX_LENGTH,
+                minLength: companyConstants.config.REGISTER_NUMBER_MIN_LENGTH,
                 stringToValidate: this.registerNumber
             },
-            lengthMessage: CompanyConstants.messages.REGISTER_NUMBER_LENGTH_MESSAGE,
-            typeOfMessage: CompanyConstants.messages.REGISTER_NUMBER_TYPEOF_MESSAGE
+            lengthMessage: companyConstants.messages.REGISTER_NUMBER_LENGTH_MESSAGE,
+            typeOfMessage: companyConstants.messages.REGISTER_NUMBER_TYPEOF_MESSAGE
         });
     };
 
@@ -101,12 +101,12 @@ export class Company extends BaseModel {
         this.baseStringValidation({
             field: "zipcode",
             overrideOptions: {
-                maxLength: CompanyConstants.config.ZIPCODE_MAX_LENGTH,
+                maxLength: companyConstants.config.ZIPCODE_MAX_LENGTH,
                 minLength: 0,
                 stringToValidate: this.zipcode
             },
-            lengthMessage: CompanyConstants.messages.ZIPCODE_LENGTH_MESSAGE,
-            typeOfMessage: CompanyConstants.messages.ZIPCODE_TYPEOF_MESSAGE
+            lengthMessage: companyConstants.messages.ZIPCODE_LENGTH_MESSAGE,
+            typeOfMessage: companyConstants.messages.ZIPCODE_TYPEOF_MESSAGE
         });
     };
 

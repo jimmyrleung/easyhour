@@ -24,7 +24,7 @@ const messages = {
     ZIPCODE_LENGTH_MESSAGE: `The zipcode must have at the very most ${config.ZIPCODE_MAX_LENGTH} characters.`
 }
 
-export const CompanyConstants = {
+export const companyConstants = {
     config,
     messages
 };

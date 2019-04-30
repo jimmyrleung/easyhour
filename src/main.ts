@@ -1,11 +1,14 @@
-require('module-alias/register');
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import * as http from 'http';
 import express from './express';
 
-import { SystemConstants } from './app/constants/index';
+import { systemConstants } from './app/constants/index';
+import { config } from './app/config';
 
 const server = http.createServer(express);
 
-server.listen(SystemConstants.APPLICATION_PORT, () => {
-    console.log(SystemConstants.LAUNCH_MESSAGE);
+server.listen(config.APPLICATION_PORT, () => {
+    console.log(systemConstants.LAUNCH_MESSAGE);
 });
